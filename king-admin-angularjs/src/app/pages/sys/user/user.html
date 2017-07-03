@@ -1,0 +1,63 @@
+<div class="row">
+    <div class="col-md-6">
+        <div ba-panel ba-panel-class="xmedium-panel with-scroll light-text"ba-panel-title="用户信息">
+            <form name="Form" ng-submit="kt.save()">
+                <div class="form-group">
+                    <button ui-sref="sys.user" type="button" class="btn btn-default btn-with-icon">
+                        <i class="ion-reply"></i>返回
+                    </button>
+                    <button type="submit" class="btn btn-danger btn-with-icon" ng-if="!kt.isView">
+                        <i class="ion-heart"></i>保存</button>
+                </div>
+                <div class="form-group">
+                    <label for="username">名称</label>
+                    <input ng-disabled="kt.isView" type="text" class="form-control" id="username" placeholder="名称"
+                           ng-model="kt.user.username" required>
+                </div>
+                <div class="form-group" ng-if="kt.isAdd">
+                    <label for="password">密码</label>
+                    <input type="password" class="form-control" id="password" placeholder="密码"
+                           ng-model="kt.user.password"
+                           required>
+                </div>
+                <div class="form-group" ng-if="kt.isAdd" ng-class="{'has-error': ! kt.arePasswordsEqual()}">
+                    <label for="password1">确认密码</label>
+                    <input type="password" class="form-control" id="password1" placeholder="确认密码" ng-model="kt.password"
+                           required>
+                </div>
+                <div class="form-group">
+                    <label for="email">邮箱</label>
+                    <input ng-disabled="kt.isView" type="email" class="form-control" id="email" placeholder="邮箱"
+                           ng-model="kt.user.email">
+                </div>
+                <div class="form-group">
+                    <label for="mobile">电话</label>
+                    <input ng-disabled="kt.isView" type="text" class="form-control" id="mobile" placeholder="电话"
+                           ng-model="kt.user.mobile">
+                </div>
+                <div class="form-group" ng-if="kt.isShowStatus">
+                    <label for="status">状态</label>
+                    <select ng-disabled="kt.isView" class="form-control" ng-model="kt.user.status" id="status"
+                            data-style="btn-primary" title="状态" data-container="body" selectpicker required
+                            ng-options="item.code as item.text for item in kt.statuses">
+                    </select>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div ba-panel ba-panel-class="xmedium-panel with-scroll light-text"ba-panel-title="角色列表">
+            <div class="form-group">
+                <!--<label>角色</label>-->
+                <div class="input-demo checkbox-demo row">
+                    <div class="col-md-2" ng-repeat="role in kt.user.rolelist">
+                        <label class="checkbox-inline custom-checkbox nowrap">
+                            <input type="checkbox" id="role.id" ng-model="role.checked" ng-disabled="kt.isView">
+                            <span>{{role.roleName}}</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

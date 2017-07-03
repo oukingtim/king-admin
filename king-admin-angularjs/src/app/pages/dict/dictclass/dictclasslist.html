@@ -1,0 +1,88 @@
+<div ba-panel ba-panel-title="字典分类" ba-panel-class="xmedium-panel with-scroll light-text">
+    <div class="row add-row-editable-table">
+        <div class="col-md-4">
+            <button has-perms='dict.dictclass.add' class="btn btn-success btn-with-icon" ng-click="kt.addRow()">
+                <i class="ion-plus-round"></i>新增
+            </button>
+        </div>
+        <div class="col-md-2 col-md-offset-6 ">
+            <div class="form-group">
+                <input type="text" class="form-control form-control-rounded" ng-model="kt.tableState.search.code"
+                       input-keyup="kt.LoadPage" placeholder="编号">
+            </div>
+        </div>
+    </div>
+    <table class="table table-bordered table-hover table-condensed" st-pipe="kt.LoadPage"
+           st-table="dictlist">
+        <thead>
+        <tr class="sortable">
+            <th>
+                <label class="table-checkbox checkbox-inline custom-checkbox nowrap">
+                    <input type="checkbox" ng-model="kt.checkboxes.checked">
+                    <span></span>
+                </label>
+            </th>
+            <th>序号</th>
+            <th st-sort="code">编号</th>
+            <th st-sort="remark">备注</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="dict in kt.dictlist" class="editable-row">
+            <td class="check-td">
+                <div class="mail-checkbox">
+                    <label class="checkbox-inline custom-checkbox nowrap">
+                        <input type="checkbox" ng-model="kt.checkboxes.items[dict.id]">
+                        <span></span>
+                    </label>
+                </div>
+                <div ng-show="false">
+                    <span e-name="id" e-form="rowform" editable-text="dict.id">
+                    </span>
+                </div>
+            </td>
+            <td>{{$index+1}}</td>
+            <td>
+                <span editable-text="dict.code" e-name="code" e-form="rowform" e-required>
+                {{dict.code}}
+                </span>
+            </td>
+            <td>
+                <span editable-text="dict.remark" e-name="remark" e-form="rowform">
+                {{dict.remark}}
+                </span>
+            </td>
+            <td>
+                <form editable-form name="rowform" ng-show="rowform.$visible" class="form-buttons form-inline"
+                      shown="kt.inserted == dict">
+                    <button type="submit" ng-disabled="rowform.$data.code==null||rowform.$data.code==''"
+                            ng-click="kt.save(rowform.$data)" class="btn btn-info editable-table-button btn-xs">
+                        保存
+                    </button>
+                    <button type="button" ng-disabled="rowform.$waiting" ng-click="rowform.$cancel()"
+                            class="btn btn-default editable-table-button btn-xs">
+                        取消
+                    </button>
+                </form>
+                <div class="buttons" ng-show="!rowform.$visible">
+                    <button has-perms='dict.dictclass.edit' class="btn btn-warning editable-table-button btn-xs btn-with-icon"
+                            ng-click="rowform.$show()"><i class="ion-edit"></i>编辑
+                    </button>
+                    <button has-perms='dict.dictclass.delete' class="btn btn-danger editable-table-button btn-xs btn-with-icon"
+                            ng-click="kt.del(dict.id)"><i class="ion-trash-a"></i>删除
+                    </button>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+            <td colspan="5" class="text-center">
+                <div st-pagination="" st-items-by-page="5"></div>
+            </td>
+        </tr>
+        </tfoot>
+    </table>
+</div>
+

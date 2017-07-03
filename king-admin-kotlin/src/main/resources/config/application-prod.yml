@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/ktos-admin?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password:
+
+server:
+  port: 8080
+
+logging:
+  config: classpath:logback-spring.xml
+  level: info

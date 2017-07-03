@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.oukingtim.mapper.SysMenuMapper">
+
+
+    <select id="selectMenuByUserId" resultType="com.oukingtim.domain.SysMenu">
+        SELECT * from (
+		  SELECT m.id,m.parent_id,m.name,m.icon,m.level,m.title,m.type,m.order
+            FROM sys_menu m, sys_role_menu rm, sys_user_role ur
+            WHERE m.id = rm.menu_id AND rm.role_id = ur.role_id
+                  AND ur.user_id = #{value}
+            GROUP BY m.id
+            HAVING m.type <![CDATA[ <> ]]> '2'
+          UNION
+          SELECT sm.id,sm.parent_id,sm.name,sm.icon,sm.level,sm.title,sm.type,sm.order
+            FROM sys_menu m, sys_role_menu rm, sys_user_role ur, sys_menu sm
+            WHERE m.id = rm.menu_id AND rm.role_id = ur.role_id AND m.parent_id = sm.id
+                  AND ur.user_id = #{value}
+            GROUP BY sm.id
+            HAVING sm.type <![CDATA[ <> ]]> '2'
+          UNION
+          SELECT sm.id,sm.parent_id,sm.name,sm.icon,sm.level,sm.title,sm.type,sm.order
+            FROM sys_menu m, sys_role_menu rm, sys_user_role ur, sys_menu psm, sys_menu sm
+            WHERE m.id = rm.menu_id AND rm.role_id = ur.role_id
+                  AND m.parent_id = psm.id AND psm.parent_id = sm.id
+                  AND ur.user_id = #{value}
+            GROUP BY sm.id
+            HAVING sm.type <![CDATA[ <> ]]> '2'
+        ) a
+      ORDER BY `order`,level
+	</select>
+
+    <select id="getPermissions" resultType="String">
+        SELECT m.name
+        FROM sys_menu m, sys_role_menu rm, sys_user_role ur
+        WHERE m.id = rm.menu_id AND rm.role_id = ur.role_id
+        AND ur.user_id = #{value}
+        GROUP BY m.id
+        UNION
+        SELECT sm.name
+        FROM sys_menu m, sys_role_menu rm, sys_user_role ur, sys_menu sm
+        WHERE m.id = rm.menu_id AND rm.role_id = ur.role_id AND m.parent_id = sm.id
+        AND ur.user_id = #{value}
+        GROUP BY sm.id
+        UNION
+        SELECT sm.name
+        FROM sys_menu m, sys_role_menu rm, sys_user_role ur, sys_menu psm, sys_menu sm
+        WHERE m.id = rm.menu_id AND rm.role_id = ur.role_id
+        AND m.parent_id = psm.id AND psm.parent_id = sm.id
+        AND ur.user_id = #{value}
+            GROUP BY sm.id
+    </select>
+</mapper>

@@ -1,0 +1,51 @@
+<div class="kt-modal-content">
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="$dismiss()" aria-label="Close">
+            <em class="ion-ios-close-empty sn-link-close"></em>
+        </button>
+        <h4 class="modal-title">编辑菜单</h4>
+    </div>
+    <div class="modal-body">
+        <div ba-panel ba-panel-class="with-scroll light-text">
+            <form name="Form" ng-submit="kt.save()">
+                <div class="form-group col-md-6 col-sm-6 col-xs-6">
+                    <label for="name">名称</label>
+                    <input ng-disabled="kt.isView" type="text" class="form-control" id="name" placeholder="名称"
+                           ng-model="kt.menu.name" required>
+                </div>
+                <div class="form-group col-md-6 col-sm-6 col-xs-6">
+                    <label for="icon">图标</label>
+                    <input ng-disabled="kt.isView" type="text" class="form-control" id="icon" placeholder="图标"
+                           ng-model="kt.menu.icon">
+                </div>
+                <div class="form-group col-md-6 col-sm-6 col-xs-6">
+                    <label for="title">标题</label>
+                    <input ng-disabled="kt.isView" type="text" class="form-control" id="title" placeholder="标题"
+                           ng-model="kt.menu.title">
+                </div>
+                <div class="form-group col-md-6 col-sm-6 col-xs-6">
+                    <label for="level">目录层级</label>
+                    <input ng-disabled="kt.isView" type="number" class="form-control" id="level" placeholder="目录层级"
+                           ng-model="kt.menu.level">
+                </div>
+                <div class="form-group col-md-6 col-sm-6 col-xs-6">
+                    <label for="order">排序号</label>
+                    <input ng-disabled="kt.isView" type="number" class="form-control" id="order" placeholder="排序号"
+                           ng-model="kt.menu.order">
+                </div>
+                <div class="form-group col-md-6 col-sm-6 col-xs-6" ng-if="kt.isShowType">
+                    <label for="type">类型</label>
+                    <select ng-disabled="kt.isView" class="form-control" ng-model="kt.menu.type" id="type"
+                            title="类型" data-container="body" selectpicker required
+                            ng-options="item.code as item.text for item in kt.types">
+                    </select>
+                </div>
+                <div class="form-group col-md-6 col-sm-6 col-xs-6">
+                    <button type="submit" class="btn btn-danger btn-with-icon" ng-if="!kt.isView">
+                        <i class="ion-heart"></i>保存
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="col-xs-1 col-md-1 col-sm-1 ">
+        <select class="form-control selectpicker show-tick "
+                ng-model="stItemsByPage" ng-options="i for i in [5,10,20,25,30]">
+        </select>
+    </div>
+    <div class="col-xs-9 col-md-9 col-sm-9 col-xs-offset-2 col-md-offset-2 col-sm-offset-2">
+        <div class="btn-toolbar-example">
+            <div class="btn-toolbar" role="toolbar">
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-primary"ng-click="selectPage(1)"><i class="ion-chevron-left"></i><i class="ion-chevron-left"></i></button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-primary" ng-click="selectPage(currentPage - 1)"><i class="ion-chevron-left"></i></button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default">共: {{totalItemCount}} 条</button>
+                    <button type="button" class="btn btn-default btn-xs" ><page-select></page-select></button>
+                    <button type="button" class="btn btn-default">共: {{numPages}}页</button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-primary"ng-click="selectPage(currentPage + 1)"><i class="ion-chevron-right"></i></button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-primary" ng-click="selectPage(numPages)"><i class="ion-chevron-right"></i><i class="ion-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

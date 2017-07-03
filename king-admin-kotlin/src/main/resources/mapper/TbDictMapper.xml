@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.oukingtim.mapper.TbDictMapper">
+
+
+    <select id="selectByClassCode" resultType="com.oukingtim.domain.TbDict">
+        SELECT *
+          FROM tb_dict d LEFT JOIN tb_dict_class dc ON d.dict_class_id = dc.id
+          WHERE dc.code = #{value}
+	</select>
+
+
+</mapper>

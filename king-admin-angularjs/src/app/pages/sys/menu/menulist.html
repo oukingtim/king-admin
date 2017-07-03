@@ -1,0 +1,72 @@
+<div class="row" ng-show="kt.isShowBtn">
+    <div class="col-md-12">
+        <div ba-panel ba-panel-class="with-scroll light-text" >
+            <button has-perms='sys.menu.add' ng-show="!kt.isShowAddBtn" class="btn btn-success btn-with-icon"   ui-sref="sys.menu.add({id:kt.menu.id,isAdd:true})">
+                <i class="ion-plus-round"></i>新增
+            </button>
+            <button has-perms='sys.menu.edit' class="btn btn-warning btn-with-icon"  ui-sref="sys.menu.edit({id:kt.menu.id})">
+                <i class="ion-edit"></i>编辑
+            </button>
+            <button has-perms='sys.menu.delete' ng-show="!kt.isShowDelBtn" class="btn btn-danger btn-with-icon" ng-click="kt.del(kt.menu.id)" >
+                <i class="ion-trash-a"></i>删除
+            </button>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <div ba-panel ba-panel-class="xmedium-panel with-scroll tree-panel light-text" ba-panel-title="菜单树" ng-if="kt.treeshow">
+            <div js-tree="kt.basicConfig" ng-model="kt.treeData" tree="kt.basicTree"></div>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <div ba-panel ba-panel-class="xmedium-panel with-scroll light-text" ba-panel-title="菜单明细">
+            <form name="Form" class="form-horizontal">
+                <div class="form-group">
+                    <label for="name" class="col-md-3 control-label">名称</label>
+                    <div class="col-md-7">
+                        <input ng-disabled="true" type="text" class="form-control" id="name" placeholder="名称"
+                               ng-model="kt.menu.name">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="icon" class="col-md-3 control-label">图标</label>
+                    <div class="col-md-7">
+                    <input ng-disabled="true" type="text" class="form-control" id="icon" placeholder="图标"
+                           ng-model="kt.menu.icon">
+                </div>
+                </div>
+                <div class="form-group">
+                    <label for="title" class="col-md-3 control-label">标题</label>
+                    <div class="col-md-7">
+                    <input ng-disabled="true" type="text" class="form-control" id="title" placeholder="标题"
+                           ng-model="kt.menu.title">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="level" class="col-md-3 control-label">目录层级</label>
+                    <div class="col-md-7">
+                    <input ng-disabled="true" type="text" class="form-control" id="level" placeholder="目录层级"
+                           ng-model="kt.menu.level">
+                </div>
+                </div>
+                <div class="form-group">
+                    <label for="order" class="col-md-3 control-label">排序号</label>
+                    <div class="col-md-7">
+                    <input ng-disabled="true" type="text" class="form-control" id="order" placeholder="排序号"
+                           ng-model="kt.menu.order">
+                    </div>
+                </div>
+                <div class="form-group" ng-if="kt.isShowType">
+                    <label for="type" class="col-md-3 control-label">类型</label>
+                    <div class="col-md-7">
+                    <select ng-disabled="true" class="form-control" ng-model="kt.menu.type" id="type"
+                            title="类型" data-container="body" selectpicker
+                            ng-options="item.code as item.text for item in kt.types">
+                    </select>
+                </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

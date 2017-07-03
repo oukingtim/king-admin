@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col-md-6">
+        <div ba-panel ba-panel-class="with-scroll light-text" ba-panel-title="角色信息">
+            <form name="Form" ng-submit="kt.save()">
+                <div class="form-group">
+                    <button ui-sref="sys.role" type="button" class="btn btn-default btn-with-icon">
+                        <i class="ion-reply"></i>返回
+                    </button>
+                    <button type="submit" class="btn btn-danger btn-with-icon" ng-if="!kt.isView">
+                        <i class="ion-heart"></i>保存</button>
+                </div>
+                <div class="form-group">
+                    <label for="roleName">名称</label>
+                    <input ng-disabled="kt.isView" type="text" class="form-control" id="roleName" placeholder="名称"
+                           ng-model="kt.role.roleName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="remark">备注</label>
+                    <input ng-disabled="kt.isView" type="text" class="form-control" id="remark" placeholder="备注"
+                           ng-model="kt.role.remark">
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div ba-panel ba-panel-class="with-scroll light-text" ba-panel-title="授权" ng-if="kt.treeshow">
+            <div js-tree="kt.basicConfig" ng-model="kt.treeData" tree="kt.basicTree"></div>
+        </div>
+    </div>
+</div>

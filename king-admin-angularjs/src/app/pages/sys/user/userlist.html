@@ -1,0 +1,85 @@
+<div ba-panel ba-panel-title="用户列表" ba-panel-class="xmedium-panel with-scroll light-text">
+    <div class="row add-row-editable-table">
+        <div has-perms='sys.user.add' class="col-md-4">
+            <button class="btn btn-success btn-with-icon" ui-sref="sys.user.add">
+                <i class="ion-plus-round"></i>新增
+            </button>
+        </div>
+        <div class="col-md-offset-8">
+            <div class="form-group col-md-6">
+                <input type="text" class="form-control form-control-rounded" ng-model="kt.tableState.search.username"
+                       input-keyup="kt.LoadPage" placeholder="用户名">
+            </div>
+            <div class="form-group col-md-6">
+                <input type="text" class="form-control form-control-rounded" ng-model="kt.tableState.search.email"
+                       input-keyup="kt.LoadPage" placeholder="邮箱">
+            </div>
+        </div>
+    </div>
+    <table class="table table-bordered table-hover table-condensed" st-pipe="kt.LoadPage"
+           st-table="kt.userlist">
+        <thead>
+        <tr class="sortable">
+            <th>
+                <label class="table-checkbox checkbox-inline custom-checkbox nowrap">
+                    <input type="checkbox" ng-model="kt.checkboxes.checked">
+                    <span></span>
+                </label>
+            </th>
+            <th>序号</th>
+            <th st-sort="username">用户名</th>
+            <th st-sort="email">邮箱</th>
+            <th st-sort="mobile">手机</th>
+            <th st-sort="status">状态</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="user in kt.userlist">
+            <td class="check-td">
+                <div class="mail-checkbox">
+                    <label class="checkbox-inline custom-checkbox nowrap">
+                        <input type="checkbox" ng-model="kt.checkboxes.items[user.id]">
+                        <span></span>
+                    </label>
+                </div>
+            </td>
+            <td>{{$index+1}}</td>
+            <td>
+                {{user.username}}
+            </td>
+            <td>
+                {{user.email}}
+            </td>
+            <td>
+                {{user.mobile}}
+            </td>
+            <td>
+                {{kt.showStatus(user)}}
+            </td>
+            <td>
+                <div class="buttons">
+                    <button has-perms='sys.user.view' class="btn btn-info editable-table-button btn-xs btn-with-icon"
+                            ui-sref="sys.user.view({id:user.id,isView:true})"><i class="ion-search"></i>查看
+                    </button>
+                    <button has-perms='sys.user.edit' class="btn btn-warning editable-table-button btn-xs btn-with-icon"
+                            ui-sref="sys.user.view({id:user.id})"><i class="ion-edit"></i>编辑
+                    </button>
+                    <button has-perms='sys.user.delete' class="btn btn-danger editable-table-button btn-xs btn-with-icon"
+                            ng-click="kt.del(user.id)"><i class="ion-trash-a"></i>删除
+                    </button>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+            <td colspan="7" class="text-center">
+                <div st-pagination="" st-items-by-page="5"
+                     st-template="app/pages/common/pagination.html"></div>
+            </td>
+        </tr>
+        </tfoot>
+    </table>
+</div>
+

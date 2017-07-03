@@ -1,0 +1,105 @@
+
+.kt-modal-content {
+  border-radius: 5px;
+  border: none;
+  color: $sidebar-text;
+  background-color: #1d2729;
+}
+
+.kt-modal-header {
+  color: $label-text;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  .kt-modal-title {
+    color: $sidebar-text;
+  }
+}
+
+.kt-modal-buttons {
+  margin-top: -12px;
+  margin-right: -22px;
+  button {
+    float: left;
+    margin-right: 24px;
+    margin-top: 12px;
+  }
+  &.same-width {
+    button {
+      width: 160px;
+      text-align: center;
+    }
+  }
+}
+
+$kt-modal-input-border: #e7e7e7;
+
+.kt-modal {
+  text-align: center;
+  .kt-modal-dialog {
+    display: inline-block;
+    text-align: left;
+    margin: 0 auto;
+    .form-control{
+      color: $github-color;
+      background-color: transparent;
+      border: 1px solid $kt-modal-input-border;
+      @include placeholderStyle($sidebar-text, 0.9);
+    }
+    .kt-modal-body p, .kt-modal-body div, .kt-modal-body span{
+      color: $sidebar-text;
+    }
+  }
+  .kt-modal-header {
+    border: none;
+    .close{
+      margin-top: -5px;
+    }
+  }
+  .kt-modal-footer {
+    border: none;
+    padding-top: 0;
+  }
+  .kt-modal-icon{
+    margin-right: 3px;
+  }
+  .sn-link-close {
+    color: $sidebar-text;
+    font-size: 30px;
+    &:hover {
+      color: $danger;
+    }
+  }
+}
+
+@media screen and (min-width: $resM) {
+  .kt-modal:before {
+    display: inline-block;
+    vertical-align: middle;
+    content: " ";
+    height: 100%;
+  }
+}
+
+.message-modal {
+  .kt-modal-header {
+    text-align: center;
+    i {
+      font-size: 32px;
+    }
+  }
+  .kt-modal-title {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 12px;
+    margin-top: 18px;
+  }
+  .kt-modal-body {
+    text-align: center;
+    padding: 0;
+    font-size: 14px;
+  }
+  .kt-modal-footer {
+    margin: 24px 0 12px;
+    text-align: center;
+  }
+}
