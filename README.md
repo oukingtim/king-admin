@@ -31,10 +31,11 @@ mvn install -Dmaven.test.skip=true
 
 http://localhost:8080
 
+## 注：
 如果不前后端分离部署，可以cd king-admin-angularjs 运行 gulp 命令打包生成static 
 然后替换到java或kotlin的resource里
 
-##未完成
+## 未完成
 angular4版本
 king-admin-angular ：Angular + Bootstrap4 + Webpack 
 
