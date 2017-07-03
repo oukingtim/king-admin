@@ -27,6 +27,14 @@ mvn install -Dmaven.test.skip=true
 ```
 运行 KingAdminJavaApplication.java 或者 KingAdminKotlinApplication.kt
 
+## 效果展示
 
+![image](https://github.com/oukingtim/king-admin/master/screenshots/home.jpg)
+![image](https://github.com/oukingtim/king-admin/master/screenshots/userlist.jpg)
+![image](https://github.com/oukingtim/king-admin/master/screenshots/user.jpg)
+![image](https://github.com/oukingtim/king-admin/master/screenshots/role.jpg)
+![image](https://github.com/oukingtim/king-admin/master/screenshots/menu.jpg)
+![image](https://github.com/oukingtim/king-admin/master/screenshots/phone1.jpg)
+![image](https://github.com/oukingtim/king-admin/master/screenshots/phone2.jpg)
 
 
