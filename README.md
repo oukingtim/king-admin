@@ -18,6 +18,8 @@ bower install
 
 gulp serve
 ```
+http://localhost:5000
+
 后端：
 
 ```
@@ -26,6 +28,18 @@ cd king-admin-java  或者 cd king-admin-kotlin
 mvn install -Dmaven.test.skip=true
 ```
 运行 KingAdminJavaApplication.java 或者 KingAdminKotlinApplication.kt
+
+http://localhost:8080
+
+如果不前后端分离部署，可以cd king-admin-angularjs 运行 gulp 命令打包生成static 
+然后替换到java或kotlin的resource里
+
+##未完成
+angular4版本
+king-admin-angular ：Angular + Bootstrap4 + Webpack 
+
+vue版本
+king-admin-vue : vue2 + es6 + webpack
 
 ## 效果展示
 
@@ -37,5 +51,15 @@ mvn install -Dmaven.test.skip=true
 ![image](https://github.com/oukingtim/king-admin/blob/master/screenshots/menu.png)
 ![image](https://github.com/oukingtim/king-admin/blob/master/screenshots/phone1.png)
 ![image](https://github.com/oukingtim/king-admin/blob/master/screenshots/phone2.png)
+
+
+## 鸣谢
+
+[Blur Admin](http://akveo.github.io/blur-admin/)
+
+[mybatis-plus](https://git.oschina.net/baomidou/mybatis-plus)
+
+## License
+[MIT](LICENSE.txt) license.
 
 
