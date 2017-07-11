@@ -49,14 +49,15 @@ king-admin-vue : vue2 + es6 + webpack
 
 ## 效果展示
 
-![image](http://112.74.40.9//screenshots/login.png)
-![image](http://112.74.40.9//screenshots/home.png)
-![image](http://112.74.40.9//screenshots/userlist.png)
-![image](http://112.74.40.9//screenshots/user.png)
-![image](http://112.74.40.9//screenshots/role.png)
-![image](http://112.74.40.9//screenshots/menu.png)
-![image](http://112.74.40.9//screenshots/phone1.png)
-![image](http://112.74.40.9//screenshots/phone2.png)
+![image](https://github.com/oukingtim/king-admin/blob/master/screenshots/login.png)
+![image](https://github.com/oukingtim/king-admin/blob/master/screenshots/home.png)
+![image](https://github.com/oukingtim/king-admin/blob/master/screenshots/userlist.png)
+![image](https://github.com/oukingtim/king-admin/blob/master/screenshots/user.png)
+![image](https://github.com/oukingtim/king-admin/blob/master/screenshots/role.png)
+![image](https://github.com/oukingtim/king-admin/blob/master/screenshots/menu.png)
+![image](https://github.com/oukingtim/king-admin/blob/master/screenshots/phone1.png)
+![image](https://github.com/oukingtim/king-admin/blob/master/screenshots/phone2.png)
+
 
 
 ## 鸣谢
