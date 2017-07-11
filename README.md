@@ -1,6 +1,10 @@
 ## 项目说明
 # king-admin
-king-admin是一个前后端分离的基础权限管理后台，前端：angularJs+bootstrap+gulp，后端：spring-boot+mybatis-plus(分java版和kotlin版)
+king-admin是一个超酷的前后端分离的基础权限管理后台，前端：angularJs+bootstrap+gulp，后端：spring-boot+mybatis-plus(分java版和kotlin版)
+
+## [项目演示](http://112.74.40.9)
+账号：kt
+密码：kt
 
 ## 项目部署
 
@@ -32,6 +36,7 @@ mvn install -Dmaven.test.skip=true
 http://localhost:8080
 
 ## 注：
+java用了lombok注解简化代码，请下载lombok插件
 如果不前后端分离部署，可以cd king-admin-angularjs 运行 gulp 命令打包生成static 
 然后替换到java或kotlin的resource里
 
@@ -44,14 +49,14 @@ king-admin-vue : vue2 + es6 + webpack
 
 ## 效果展示
 
-![image](https://github.com/oukingtim/king-admin/blob/master/screenshots/login.png)
-![image](https://github.com/oukingtim/king-admin/blob/master/screenshots/home.png)
-![image](https://github.com/oukingtim/king-admin/blob/master/screenshots/userlist.png)
-![image](https://github.com/oukingtim/king-admin/blob/master/screenshots/user.png)
-![image](https://github.com/oukingtim/king-admin/blob/master/screenshots/role.png)
-![image](https://github.com/oukingtim/king-admin/blob/master/screenshots/menu.png)
-![image](https://github.com/oukingtim/king-admin/blob/master/screenshots/phone1.png)
-![image](https://github.com/oukingtim/king-admin/blob/master/screenshots/phone2.png)
+![image](http://112.74.40.9//screenshots/login.png)
+![image](http://112.74.40.9//screenshots/home.png)
+![image](http://112.74.40.9//screenshots/userlist.png)
+![image](http://112.74.40.9//screenshots/user.png)
+![image](http://112.74.40.9//screenshots/role.png)
+![image](http://112.74.40.9//screenshots/menu.png)
+![image](http://112.74.40.9//screenshots/phone1.png)
+![image](http://112.74.40.9//screenshots/phone2.png)
 
 
 ## 鸣谢
