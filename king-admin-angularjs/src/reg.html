@@ -25,7 +25,7 @@
   <!-- endbuild -->
 </head>
 <body>
-<main class="auth-main" ng-controller="SignController">
+<main class="auth-main" ng-controller="SignController" ng-if="show">
   <div class="auth-block">
     <h1>注册 King Admin</h1>
 
@@ -72,6 +72,9 @@
     </div>
   </div>
 </main>
+<div id="preloader" ng-show="!show">
+  <div></div>
+</div>
 <!-- build:js(src) scripts/vendor.js -->
 <!-- bower:js -->
 <!-- run `gulp inject` to automatically populate bower script dependencies -->
@@ -84,7 +87,11 @@
     angular.module('KingSign', [
         'ngResource',
         'toastr',
-    ]);
+    ]).run(function ($timeout, $rootScope) {
+        $timeout(function () {
+            $rootScope.show = true;
+        },3000);
+    });
 </script>
 <script type="text/javascript">
     (function () {

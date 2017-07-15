@@ -3,7 +3,7 @@ package com.oukingtim.web
 import com.alibaba.fastjson.JSONObject
 import com.jayway.restassured.RestAssured
 import com.jayway.restassured.response.ValidatableResponse
-import com.oukingtim.KingAdminServiceApplication
+import com.oukingtim.KingAdminKotlinApplication
 import org.apache.commons.collections.map.HashedMap
 import org.junit.Before
 import org.junit.Test
@@ -16,7 +16,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner
  * Created by oukingtim
  */
 @RunWith(SpringJUnit4ClassRunner::class)
-@SpringBootTest(classes = arrayOf(KingAdminServiceApplication::class), webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest(classes = arrayOf(KingAdminKotlinApplication::class), webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class RestTest {
 
     @Value("\${local.server.port}")

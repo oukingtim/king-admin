@@ -26,7 +26,7 @@
     <!-- endbuild -->
 </head>
 <body>
-<main class="auth-main" ng-controller="LoginController">
+<main class="auth-main" ng-controller="LoginController" ng-if="show">
     <div class="auth-block">
         <h1>登录 King Admin</h1>
 
@@ -66,6 +66,9 @@
         </div>
     </div>
 </main>
+<div id="preloader" ng-show="!show">
+    <div></div>
+</div>
 <!-- build:js(src) scripts/vendor.js -->
 <!-- bower:js -->
 <!-- run `gulp inject` to automatically populate bower script dependencies -->
@@ -78,7 +81,11 @@
     angular.module('KingLogin', [
         'ngResource',
         'toastr',
-    ]);
+    ]).run(function ($timeout, $rootScope) {
+        $timeout(function () {
+            $rootScope.show = true;
+        },3000);
+    });
 </script>
 <script type="text/javascript">
     (function () {
@@ -92,7 +99,7 @@
                     $resource('api/login', {}, {'login': {method: 'POST'}})
                         .login($scope.user, function (data) {
                             if (data.code == 0) {
-                                $window.open('/', '_self');
+                                $window.open('index.html', '_self');
                             }else{
                                 toastr.warning(data.msg, "提示", {"progressBar": true,});
                             }
