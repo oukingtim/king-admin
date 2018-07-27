@@ -8,7 +8,7 @@
         'KingAdmin.pages.common',
         'KingAdmin.pages.sys',
         'KingAdmin.pages.dict',
-
+        'KingAdmin.pages.charts'
     ])
         .config(routeConfig);
 

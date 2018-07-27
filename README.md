@@ -2,9 +2,6 @@
 # king-admin
 king-admin是一个超酷的前后端分离的基础权限管理后台，前端：angularJs+bootstrap+gulp，后端：spring-boot+mybatis-plus(分java版和kotlin版)
 
-## [项目演示](http://112.74.40.9)
-账号：kt
-密码：kt
 
 ## 项目部署
 
@@ -40,12 +37,6 @@ java用了lombok注解简化代码，请下载lombok插件
 如果不前后端分离部署，可以cd king-admin-angularjs 运行 gulp 命令打包生成static 
 然后替换到java或kotlin的resource里
 
-## 未完成
-angular4版本
-king-admin-angular ：Angular + Bootstrap4 + Webpack 
-
-vue版本
-king-admin-vue : vue2 + es6 + webpack
 
 ## 效果展示
 

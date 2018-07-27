@@ -26,6 +26,7 @@ public class ShiroConfiguration {
         //设置session过期时间为1小时(单位：毫秒)，默认为30分钟
         sessionManager.setGlobalSessionTimeout(60 * 60 * 1000);
         sessionManager.setSessionValidationSchedulerEnabled(true);
+        sessionManager.setSessionIdUrlRewritingEnabled(false);
 
         return sessionManager;
     }
@@ -49,6 +50,7 @@ public class ShiroConfiguration {
         Map<String, String> filterMap = new LinkedHashMap<>();
 
         filterMap.put("/api/**", "anon");
+        filterMap.put("/lyzd/**", "anon");
         filterMap.put("/assets/**", "anon");
         filterMap.put("/fonts/**", "anon");
         filterMap.put("/maps/**", "anon");
