@@ -2,6 +2,9 @@
 # king-admin
 king-admin是一个超酷的前后端分离的基础权限管理后台，前端：angularJs+bootstrap+gulp，后端：spring-boot+mybatis-plus(分java版和kotlin版)
 
+## [项目演示](http://120.78.202.43:8083/)
+账号：king
+密码：king
 
 ## 项目部署
 
