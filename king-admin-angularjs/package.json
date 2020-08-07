@@ -36,7 +36,7 @@
     "gulp-zip": "^3.0.2",
     "http-proxy-middleware": "~0.9.0",
     "proxy-middleware": "^0.15.0",
-    "lodash": "~3.10.1",
+    "lodash": "~4.17.19",
     "main-bower-files": "~2.9.0",
     "uglify-save-license": "~0.4.1",
     "wiredep": "~2.2.2",
