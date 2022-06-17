@@ -30,13 +30,13 @@
 		<commons-io-version>2.5</commons-io-version>
 		<commons-codec-version>1.10</commons-codec-version>
 		<commons-configuration-version>1.10</commons-configuration-version>
-		<fastjson-version>1.2.30</fastjson-version>
+		<fastjson-version>1.2.83</fastjson-version>
 		<shiro-version>1.3.2</shiro-version>
 		<mybatis.plus.boot.version>1.0.1</mybatis.plus.boot.version>
 		<lombok.version>1.16.14</lombok.version>
 		<restassured.version>2.3.3</restassured.version>
 		<jayway.restassured.version>2.3.3</jayway.restassured.version>
-		<fastjson.version>1.2.24</fastjson.version>
+		<fastjson.version>1.2.83</fastjson.version>
 	</properties>
 
 	<dependencies>
